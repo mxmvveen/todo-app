@@ -1,0 +1,158 @@
+body {
+	background-color: #f9f9f9;
+	font-family: sans-serif;
+}
+.container {
+	width: 765px;
+	margin: auto;
+}
+.order-section {
+	button {
+		height: 34px;
+		background-color: #fff;
+		font-size: 12px;
+		border: solid 1px #cacaca;
+		border-radius: 5px;
+		color: #717171;
+		padding: 0 24.5px;
+		cursor: pointer;
+		outline: none;
+		&:hover {
+			background-color: #f5f5f5;
+		}
+	}
+}
+.todo-container {
+	width: 320px;
+	min-height: 400px;
+	border-radius: 5px;
+	padding: 15px 15px;
+	box-sizing: border-box;
+	float: left;
+	margin-right: 40px;
+	background-color: #fff;
+	border: solid 1px #cacaca;
+	margin-top: 10px;
+	overflow: hidden;
+	.todo-list{
+		border: solid 1px #eee;
+		border-radius: 7px;
+		padding: 9px 70px 10px 45px;
+		position: relative;
+		margin: 7px 0;
+		overflow: hidden;
+		color: #6d6d6d;
+		span{
+			&.label{
+				display: block;
+				width: 35px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-right: solid 1px #eee;
+			}
+
+			&.close {
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				transform: translateY(-60%);
+				cursor: pointer;
+			}
+			&.change {
+				position: absolute;
+				right: 29px;
+				font-size: 10px;
+				top: 50%;
+				transform: translateY(-72%);
+			}
+		}
+		&.a-prio {
+			span{
+				&.label{
+					background-color: #ff0000;
+				}
+			}
+		}
+		&.b-prio {
+			span{
+				&.label{
+					background-color: #ff8100;
+				}
+			}
+		}
+		&.c-prio {
+			span{
+				&.label{
+					background-color: #0acc0a;
+				}
+			}
+		}
+	}
+}
+form.add-form {
+	margin-top: 10px;
+	float: left;
+
+	span {
+		display: block;
+		margin: 20px 0 5px;
+		text-align: center;
+	}
+	label {
+		input {
+			display: block;
+			margin: 3px auto 5px;
+		}
+		border-radius: 5px;
+		display: block;
+		padding: 5px;
+		width: 115px;
+		height: 60px;
+		margin: 5px 5px;
+		float: left;
+		text-align: center;
+		color: #fff;
+		&:first-of-type {
+			margin-left: 0;
+		}
+		&.a-prio {
+			background-color: #ff0000;
+		}
+		&.b-prio {
+			background-color: #ff8100;
+		}
+		&.c-prio {
+			background-color: #0acc0a;
+		}
+	}
+	textarea,
+	input[type=text] {
+		border-radius: 6px;
+		border: solid 1px #cacaca;
+		padding: 20px 83px;
+		font-size: 14px;
+		text-align: center;
+	}
+}
+.submit-todo {
+	padding-top: 10px;
+	clear: both;
+
+	input {
+		padding: 11px 13px;
+		background-color: #3782f1;
+		border: none;
+		border-radius: 10px;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 12px;
+		cursor: pointer;
+		outline: none;
+		&:hover {
+			opacity: .9;
+		}
+	}
+}

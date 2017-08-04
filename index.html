@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl" ng-app="todoApp">
+<head>
+	<title>Todo App</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="js/module.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="todoAppController">
+		<div class="order-section">
+			<button ng-click="order = null">
+				Last added
+			</button>
+			<button ng-click="order = 'item'">
+				Alphabetic
+			</button>
+			<button ng-click="order = 'priority'">
+				Priority
+			</button>
+		</div>
+		<div class="todo-container">
+			<div class="todo-list {{ todo.priority }}" ng-repeat="todo in todoList | orderBy: order">
+				<span class="label"></span>{{ todo.item }} 
+				<span class="close" ng-click="remove(todo)">x</span>
+				<span class="change" ng-click="change(todo)">change</span>
+			</div>
+		</div>
+		<form ng-submit="newTodo(todo)" class="add-form" ng-init="todoList.priority='c-prio'">
+			<textarea id="app-inpt-field" placeholder="What do I have to do?" cols="30" rows="10" ng-model="todoList.todoItem"></textarea>
+			<span>
+				How important is it?
+			</span>
+			<label class="a-prio">
+				<input type="radio" name="priority" ng-model="todoList.priority" value="a-prio">
+				Very important
+			</label>
+			<label class="b-prio">
+				<input type="radio" name="priority" ng-model="todoList.priority" value="b-prio">
+				Maybe it is a little important
+			</label>
+			<label class="c-prio">
+				<input type="radio" name="priority" ng-model="todoList.priority" value="c-prio">
+				Totaly not important at all
+			</label>
+			<div class="submit-todo">
+				<input type="submit" ng-value="submitValue">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
